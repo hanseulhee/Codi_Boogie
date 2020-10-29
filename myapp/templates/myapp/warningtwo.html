@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>warning</title>
+ 
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<style>
+  .logo {
+    width: 400px;
+    height: 110px;
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+  }
+
+  .page {
+  width: 5vw;
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+}
+
+
+
+@media screen and (max-width: 1260px) {
+    .back {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 840px) {
+    .back {
+        width: 100%;
+    }
+}
+
+.button_base {
+    margin: 0;
+    border: 0;
+    font-size: 18px;
+    position: relative;
+    top: 290%;
+    right: 20%;
+    margin-top: -5px;
+    margin-left: -100px;
+    width: 160px;
+    height: 50px;
+    text-align: center;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-user-select: none;
+    cursor: default;
+}
+
+.button_base:hover {
+    cursor: pointer;
+}
+
+/* ### ### ### 01 */
+.b01_simple_rollover {
+    color: #000000;
+    border: #000000 solid 1px;
+    padding: 10px;
+    background-color: #ffffff;
+}
+
+.b01_simple_rollover:hover {
+    color: #ffffff;
+    background-color: #db1717
+}
+</style>
+<a href="{%url 'main2' %}"><img class="logo" src="{% static 'myapp/img/main/로고.jpg' %}" alt=""></a>
+
+<hr style="border: 2px solid #B5B2FF;">
+
+<div tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: #B5B2FF;">
+          <h5 class="modal-title">경고 ! </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>상품이 검출되지 않았습니다.</p>
+        </div>
+        <div class="modal-footer" style="background-color: #B5B2FF;">
+          <div class="back">
+            <div class="button_base b01_simple_rollover" onclick="location.href='/main'">back</div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+{% load static %}
+<DOCTYPE HTML5>
+    <html>
+      <head>
+        <link href="{% static 'myapp/css/styles2.css' %}" rel="stylesheet" />
+        <style>
+           a:link {text-decoration: none;}
+            a:visited {text-decoration: none;}
+        </style>
+      </head>
+    
+      <body width="100%" height="100%">
+        
+       <h1>여기 롯데 상품 나타낼거야</h1>
+        
+    <form method="POST" enctype="multipart/form-data" action="{% url 'lotteproduct' %}">
+      {% csrf_token %}
+      <input class="form-control mr-sm-2" type="text" name="search" placeholder="검색어를 입력하세요">
+      <input type="submit" value="submit" class="btn btn-info" role="button">
+    </form>
+    <p>  <a href="{% url 'lowprice' %}" class="btn btn-primary" role="button">낮은 가격순</a>  <a href="{% url 'highprice' %}" class="btn btn-primary" role="button">높은 가격순</a></p>
+    {% if lotteposts %}
+    {%for l in lotteposts%}
+    <div class="row">
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+            <img src="/media/{{l.lotteImage}}" alt="..."width="150">
+            <div class="caption">
+              <p>카테고리 : {{l.category}}</p>
+              <h5>상품 이름 : {{l.lotteName}}</h5>
+              <p>가격 : {{l.lottePrice}}</p>
+              <p action="POST" name="searchtitle">검색어 : {{l.search_lotte}}</p>
+              <p><a href="{% url 'add_cart' l.id %}" class="btn btn-primary" role="button">장바구니담기</a>  <a href="{{l.lotteUrl}}" class="btn btn-primary" role="button">상품 보러가기</a></p>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+    {% if lotteposts.has_other_pages %}
+    {%if lotteposts.has_previous%}
+        {% if q %}
+            <a href="?q={{q}}&page=1">1</a>
+            <a href="?q={{q}}&page={{lotteposts.previous_page_number}}">이전</a>
+        {% else %}
+        <a href="?page=1">1</a>
+        <a href="?page={{lotteposts.previous_page_number}}">이전</a>
+        {% endif %}
+    {%endif%}
+    <span>{{lotteposts.number}}</span>
+    <span>of</span>
+    <span>{{lotteposts.paginator.num_pages}}</span>
+    {%if lotteposts.has_next%}
+        {% if q %}
+        <a href="?q={{q}}&page={{lotteposts.next_page_number}}">다음</a>
+        <a href="?q={{q}}&page={{lotteposts.paginator.num_pages}}">마지막</a>
+        {% else %}
+        <a href="?page={{lotteposts.next_page_number}}">다음</a>
+        <a href="?page={{lotteposts.paginator.num_pages}}">마지막</a>
+        
+        {%endif%}
+    {%endif%}
+  </div>
+{% endif %}
+{% else %}
+<h4>검색결과가 없습니다...</h4>
+{% endif %}
+
+<footer class="footer">
+  <div class="footercont">
+      <div class="row">
+        <div class="col-sm-4">
+          <h4 class="title">Codieboogie</h4>
+          <p>성공회대학교 멋쟁이 사자처럼 8기</p>
+          <p>대표: 김수현</p>
+          <p>팀원: 박주영, 한슬희, 정수호, 진형준</p>
+          <p>E-mail: sss4920@likelion.org</p>
+          <p>사업자등록번호: 326-41-48251</p>
+    
+        </div>
+      <div class="col-sm-4">
+          <h4 class="title">고객만족센터</h4>
+          <p>● 운영시간 평일(월~금): 9:00~20:00</p>
+          <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;토요일: 9:00~13:00</p>
+          <p>● 문의전화 &nbsp;010-4037-4920</p>
+          <p>● 부정비리 신고 E-mail: 3021062@gmail.com</p>
+
+          </div>
+
+  
+          <div class="col-sm-3">
+            <h4 class="title">My Account</h4>
+            <ul class="social-icon">
+              <span class="acount-icon">          
+               
+                <a href="#"><i class="fa fa-heart" aria-hidden="true"></i> Wish List</a>
+                <a href="basket"><i class="fa fa-cart-plus" aria-hidden="true"></i> Cart</a>
+                <a href="inform"><i class="fa fa-user" aria-hidden="true"></i> Profile</a>
+                <a href="introduce"><i class="fa fa-globe" aria-hidden="true"></i> instruction</a>           
+          
+              </span>
+              <a href="#" class="social"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+              <a href="#" class="social"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+              <a href="#" class="social"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+              <a href="#" class="social"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+              <a href="#" class="social"><i class="fa fa-google" aria-hidden="true"></i></a>
+              <a href="#" class="social"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
+              </ul>
+            </div>
+      </div>
+      <hr>
+      
+      <div class="row text-center"> © 2020. Made with by likelion8th.</div>
+      </div>
+      
+      
+  </footer>
+      </body>
+    </html>

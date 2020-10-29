@@ -1,0 +1,67 @@
+@font-face {
+  font-family: 'NanumBarunGothic';
+}
+
+body {
+  font-family: 'NanumBarunGothic';
+  src:url('../fonts/NanumBarunGothic.ttf')
+}
+
+.logo {
+  width: 400px;
+  height: 110px;
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+}
+
+.hr1 {
+  border: 2px solid rgb(49, 46, 46);
+}
+
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 10px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  margin-top: 15px;
+  background-color: #BDBDBD;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #8C8C8C;
+}
+
+.container {
+  font-family: 'NanumBarunGothic';
+  border-radius: 5px;
+  background-color:#D5D5D5;
+  padding: 20px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.gender1 {
+  margin-top: 20px;
+}
+
+.gender2 {
+  margin-bottom: 20px;
+}

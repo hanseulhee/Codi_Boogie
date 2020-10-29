@@ -1,0 +1,151 @@
+{% load static %}
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<head>
+  <title>inform</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <style>
+    .logo {
+      width: 400px;
+      height: 110px;
+      display: table;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 10px;
+    }
+  </style>
+<a href="{%url 'main2' %}"><img class="logo" src="{% static 'myapp/img/main/로고.jpg' %}" alt=""></a>
+
+<hr style="border: 2px solid #B5B2FF;">
+<hr>
+<div class="container bootstrap snippet">
+    <div class="row">
+  		<div class="col-sm-10"><h1></h1></div>
+    	
+    </div>
+    <div class="row">
+  		<div class="col-sm-3"><!--left col-->
+              
+
+    
+     
+          
+        </div>
+    	<div class="col-sm-12">
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#home">my inform</a></li>
+               
+              </ul>
+
+              
+          <div class="tab-content">
+            <div class="tab-pane active" id="home">
+                <hr>
+
+                  <form class="form"  method="POST" id="registrationForm">
+                    {% csrf_token %}
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="first_name"><h4>ID</h4></label>
+                              <input type="text" class="form-control" id="username" name="username" value="{{ user.username }}"> 
+                             
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                        <div class="col-xs-6">
+                            <label for="password"><h4>Password</h4></label>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="변경할 비밀번호를 입력하세요.">
+                        </div>
+                    </div>
+              
+          
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="phone"><h4>Phonenumber</h4></label>
+                              <input type="text" class="form-control" name="phone_number" id="phone" placeholder="enter phone" title="enter your phone number if any." value="{{ user.phone_number }}" >
+                          </div>
+                      </div>
+          
+                      <div class="form-group">
+                          <div class="col-xs-6">
+                             <label for="mobile"><h4>gender</h4></label>
+                              <input type="text" class="form-control" name="gender" id="gender" placeholder="male? female?" title="enter your mobile number if any." value="{{ user.gender }}" >
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="name"><h4>name</h4></label>
+                              <input type="name" class="form-control" name="name" id="name" placeholder="you@email.com" title="enter your email." value="{{ user.name }}" >
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="name"><h4>address</h4></label>
+                              <input type="name" class="form-control" id="location" placeholder="somewhere" title="enter a location"  value="{{ user.address }}">
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                           <div class="col-xs-12">
+                                <br>
+                                <button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign" onclick="return confirm('정말 수정하시겠습니까?')" ></i> Save</button>
+                               	<button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
+                            </div>
+                      </div>
+              	</form>
+              
+              <hr>
+              
+             </div><!--/tab-pane-->
+
+              	</form>
+              </div>
+               
+              </div><!--/tab-pane-->
+          </div><!--/tab-content-->
+
+        </div><!--/col-9-->
+    </div><!--/row-->
+    <script>
+
+    $(document).ready(function() {
+
+    
+        var readURL = function(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+    
+                reader.onload = function (e) {
+                    $('.avatar').attr('src', e.target.result);
+                }
+        
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        
+    
+        $(".file-upload").on('change', function(){
+            readURL(this);
+        });
+    });
+</script>
+</body>

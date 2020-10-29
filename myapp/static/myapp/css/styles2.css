@@ -1,0 +1,244 @@
+
+@font-face {
+  font-family: 'NanumBarunGothic';
+}
+
+body {
+  font-family: 'NanumBarunGothic';
+  src:url('../fonts/NanumBarunGothic.ttf')
+}
+
+.logo {
+  width: 400px;
+  height: 110px;
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+}
+.hr1 {
+  border: 2px solid black;
+}
+
+
+.topnav {
+  font-family: 'NanumBarunGothic';
+  overflow: hidden;
+}
+
+/* Style the search box inside the navigation bar */
+.topnav input[type=text] {
+  float: left;
+  padding: 10px;
+  width: 50%;
+  margin-left: 20%;
+  font-family: 'NanumBarunGothic';
+  border-radius: 10px;
+  border-color: #d5d5d5;
+  margin-top: 8px;
+  font-size: 17px;
+  background-color: #D5D5D5;
+}
+
+.carticon {
+  float: right;
+  padding: 10px;
+  width: 60px;
+  height: 60px;
+  color: black;
+}
+
+/* navigation bar end */
+
+.searchtext {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.btn {
+  font-family: 'NanumBarunGothic';
+    position:relative;
+    left:40%;
+    transform: translateX(-50%);
+    margin-bottom: 40px;
+    width:80%;
+    height:40px;
+    background: linear-gradient(125deg,black, white);
+    background-position: left;
+    background-size: 200%;
+    color:white;
+    font-weight: bold;
+    border:none;
+    cursor:pointer;
+    transition: 0.4s;
+    display:inline;
+    padding: 20px;
+    padding: 15px;
+    text-decoration: none;
+}
+  
+  .btn:hover {
+    background-position: right;
+  }
+  
+  .bottomText {
+    text-align: center;
+  }
+
+  #pricebutton {
+    position:relative;
+    left:40%;
+    transform: translateX(-50%);
+    margin-top: 20px;
+    width: 80%;
+    height: 40px;
+    background: linear-gradient(125deg,#8C8C8C, lightgray);
+    background-position: left;
+    background-size: 200%;
+    color:white;
+    font-weight: bold;
+    border:none;
+    cursor:pointer;
+    transition: 0.4s;
+    display:inline;
+    padding: 20px;
+    padding: 15px;
+    text-decoration: none;
+  }
+
+  .pricebuttons {
+    float: right;
+    margin-right: 18%;
+  }
+
+  #pricebutton:hover {
+    background: linear-gradient(125deg,#CC3D3D, #FFD8D8);
+  }
+
+.productcontainer {
+  margin-left: 3%;
+}
+
+#centerproduct {
+  font-family: 'NanumBarunGothic';
+  float: left;
+  width:  30%;
+  height: 600px;
+  box-sizing: border-box;
+  background-color: white;
+  border: 2px solid black;
+  padding: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+#cartbutton {
+  width: 150px;
+  height: auto;
+  line-height: 20px;
+  border: none;
+}
+
+#gototheproductpage {
+  width: 150px;
+  height: auto;
+  line-height: 20px;
+  border: none;
+}
+
+.tomypage {
+  width: 230px;
+  position: relative;
+  float: right;
+  height: 500px;
+  margin: 10px;
+  bottom: 960%;
+  right: 7%;
+}
+
+.tomypage:hover .overlay1 {
+  opacity: 1;
+}
+
+.pagenumber {
+  font-size: 20px;
+}
+
+.productname {
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* navbar */
+
+
+.topnav {
+  overflow: hidden;
+}
+
+/* Style the search box inside the navigation bar */
+.topnav input[type=text] {
+  float: left;
+  padding: 10px;
+  width: 50%;
+  margin-left: 20%;
+  font-family: 'NanumBarunGothic';
+  border-radius: 10px;
+  border-color: #d5d5d5;
+  margin-top: 8px;
+  font-size: 17px;
+  background-color: #D5D5D5;
+}
+
+.inbutton {
+  font-family: 'NanumBarunGothic';
+  margin-left: 20px;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+#searchbutton {
+  background-color: black;
+  color: white;
+  border: 2px solid white;
+  width: 100px;
+  height: 50px;
+  font-size: 20px;
+  border-radius: 20px;
+  float: left;
+  padding: 5px;
+}
+
+.carticon {
+  float: right;
+  padding: 10px;
+  width: 60px;
+  height: 60px;
+  color: black;
+}
+
+/* @media */
+.search-con-div{
+  text-align: center;
+  width: 70%;
+}
+
+.search .button-sort  {
+  display: flex;
+  /* padding: 0 50% 0 0; */
+}
+
+.search .button-sort a{
+  width: 200px;
+  margin: 0 5px;
+  justify-content: left;
+}
